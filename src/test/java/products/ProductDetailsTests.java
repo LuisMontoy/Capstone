@@ -11,7 +11,7 @@ public class ProductDetailsTests extends BaseTests {
 
 
 
-    @Test
+    @Test(groups = { "smoke" })
     public void testProductInformation(){
         ProductsPage productsPage = loginPage.completeLogin(username, password);
         ProductDetailsPage productDetailsPage = productsPage.clickOnProductImage();

@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class AddToCartTests extends BaseTests {
 
-    @Test
+    @Test(groups = { "smoke" })
     public void TestGoToCart(){
         ProductsPage productsPage = loginPage.completeLogin(username, password);
         productsPage.addToCart();
