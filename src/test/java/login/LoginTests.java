@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTests extends BaseTests {
 
-    @Test
+    @Test(groups = { "smoke" })
     public void testSuccessfulLogin(){
         System.out.println("Page Title: " + loginPage.getLoginPageTitle());
         System.out.println("URL: " + loginPage.getLoginPageURL());
