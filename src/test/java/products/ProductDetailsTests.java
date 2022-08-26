@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class ProductDetailsTests extends BaseTests {
 
 
-
+    //Test
     @Test(groups = { "smoke" })
     public void testProductInformation(){
         ProductsPage productsPage = loginPage.completeLogin(username, password);
