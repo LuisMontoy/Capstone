@@ -66,4 +66,37 @@ public class ProductsPage {
         }
     }
 
+    public double[] remove$sign() {
+        List<WebElement> prices = driver.findElements(priceArray);
+        String numberString;
+        double[] newArray = new double[prices.size()];
+        for(int i=0;i<prices.size();i++){
+            numberString = prices.get(i).getText();
+            String output = numberString.replace("$", "").replace(",", "");
+            System.out.println(output);
+            double stringToDouble = Double.parseDouble(output);
+            newArray[i] = stringToDouble;
+        }
+        return newArray;
+
+    }
+
+    public boolean validateOrder(double[] amountsArray){
+        double current;
+        double previous;
+        boolean ordered = false;
+        for(int i=1;i<amountsArray.length;i++){
+            current = amountsArray[i];
+            previous = amountsArray[i-1];
+            if (current >= previous){
+                ordered = true;
+            }
+            else {
+                ordered = false;
+                break;
+            }
+        }
+        return ordered;
+    }
+
 }

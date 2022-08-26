@@ -4,8 +4,9 @@ import base.BaseTests;
 import org.testng.annotations.Test;
 import pages.ProductsPage;
 
-public class ProductsPageTest extends BaseTests {
+import static org.testng.Assert.assertTrue;
 
+public class ProductsPageTest extends BaseTests {
 
     @Test
     public void testAddToCart(){
@@ -22,11 +23,13 @@ public class ProductsPageTest extends BaseTests {
     }
 
     @Test
-    public void sortProductsByPriceAscending(){
+    public void sortProductsByPriceAscending()  {
         ProductsPage productsPage = loginPage.completeLogin(username, password);
-        productsPage.getPricesArray();
+        //productsPage.getPricesArray();
         productsPage.sortByPriceAscending();
-        productsPage.getPricesArray();
+        //productsPage.getPricesArray();
+        double[] arrayNo$sign = productsPage.remove$sign();
+        assertTrue(productsPage.validateOrder(arrayNo$sign));
 
     }
 }

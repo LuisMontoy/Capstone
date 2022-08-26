@@ -3,7 +3,6 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -20,19 +19,16 @@ public class BaseTests extends Data{
     @BeforeClass(alwaysRun = true)
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        //System.setProperty("webdriver.safari.driver", "resources/safaridriver");
         //System.setProperty("webdriver.gecko.driver", "resources/geckodriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        //driver = new SafariDriver();
         //driver = new FirefoxDriver();
         goHome();
         System.out.println(driver.getTitle());
         loginPage = new LoginPage(driver);
-        System.out.println(username);
     }
 
     @BeforeMethod(alwaysRun = true)
