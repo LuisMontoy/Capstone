@@ -159,7 +159,7 @@ mkdir -p testResults
 newman run Postman/Pokemon_Challenge.postman_collection.json -e Postman/Pokemon\ Env.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
 ```
 
-Go to the "testResults" folder and open the Report in HTML
+Inside the workflow that was executed in Github Actions, go to the RunReports Artifact, download and open the Report in HTML
 
 # 6. Tests
 
@@ -222,7 +222,7 @@ This was configured using Github Actions.
 
 # 8. Contact
 
-Developed by: Luis Cuauhtemoc Montoya
+Developed by: Luis Cuauhtemoc Montoya <br>
 Email: luis.cuauhtemoc@wizeline.com
 
 
