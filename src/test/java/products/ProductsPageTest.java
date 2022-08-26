@@ -25,9 +25,7 @@ public class ProductsPageTest extends BaseTests {
     @Test
     public void sortProductsByPriceAscending()  {
         ProductsPage productsPage = loginPage.completeLogin(username, password);
-        //productsPage.getPricesArray();
         productsPage.sortByPriceAscending();
-        //productsPage.getPricesArray();
         double[] arrayNo$sign = productsPage.remove$sign();
         assertTrue(productsPage.validateOrder(arrayNo$sign));
 
